@@ -5,7 +5,8 @@ COPY . /src/
 
 RUN set -eux \
  && cd /src \
- && ./build_gatherer.sh
+ && ./get_dependencies.sh \
+ && go build pgwatch2.go prom.go patroni.go logparse.go
 
 FROM golang
 
